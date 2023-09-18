@@ -17,4 +17,15 @@ export default function InserirProdutos() {
         const { name, value } = e.target;
         setProdutos({ ...produto, [name]: value });
     };
+    const handleInserir = (event) => {
+        event.preventDefault();
+
+        if (produto.nome && produto.desc && produto.preco) {
+            event.preventDefault();
+            
+            ListaProdutos.push(produto)
+
+            navigate("/produtos")
+        }
+    };
 }
