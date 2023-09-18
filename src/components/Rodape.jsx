@@ -15,7 +15,7 @@ export default function Rodape() {
             <h3> Integrantes:
                 <p>Vitor Ruas - 550871</p>
                 <p>Lucas Mendonça - 99528 </p>
-                <p>Gabriel Previ</p>
+                <p>Gabriel Previ - 98774</p>
                 <p>Otávio Porto</p>
             </h3>
                 

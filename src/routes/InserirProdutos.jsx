@@ -17,4 +17,65 @@ export default function InserirProdutos() {
         const { name, value } = e.target;
         setProdutos({ ...produto, [name]: value });
     };
+    const handleInserir = (event) => {
+        event.preventDefault();
+
+        if (produto.nome && produto.desc && produto.preco) {
+            event.preventDefault();
+            
+            ListaProdutos.push(produto)
+
+            navigate("/produtos")
+        }
+    };
+    return (
+        <div>
+            <h2>Inserindo Produtos</h2>
+            <h4>Exercício - Checkpoint 2</h4>
+            <form onSubmit={handleInserir}>
+                <fieldset>
+                    <legend>Produto a ser Inserido</legend>
+                    <div>
+                        <label htmlFor="idNome">Nome:</label>
+                        <input
+                            type="text"
+                            name="nome"
+                            id="idNome"
+                            value={produto.nome}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="idDesc">Descrição:</label>
+                        <input
+                            type="text"
+                            name="desc"
+                            id="idDesc"
+                            value={produto.desc}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="idPreco">Preço:</label>
+                        <input
+                            type="text"
+                            name="preco"
+                            id="idPreco"
+                            value={produto.preco}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div>
+                        <button type="submit">Adicionar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    );
 }
+
+
+
