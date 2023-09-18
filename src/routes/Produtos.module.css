@@ -1,0 +1,42 @@
+.estilo{
+    border-collapse: collapse;
+    border: 2px solid #ccc;
+    margin: 0 auto;
+
+    .tableHeaders{
+        text-align: center;
+        background-color: #f89857;
+        color: #fff;
+    }
+        & th {  /* Trabalhando com o filho do tableHeaders */ 
+            border: 2px solid #ccc;
+        }
+
+    .tableLine{
+            background-color:#ffffff;
+        
+            &:hover {
+            background-color: #f89857;
+            color: #000000;
+        }
+
+            & td {
+                border: 2px solid #f3580b;
+                    &:first-child {
+                        text-align: center;
+                    }
+
+                    &:last-child {
+                        text-align: center;
+                    }
+            }
+    }
+
+    .tableFooter {
+        text-align: center;
+        background-color: #f89857;
+        color: #fff;
+    }
+}
+
+
