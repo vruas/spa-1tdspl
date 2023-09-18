@@ -1,36 +1,42 @@
+import { useNavigate} from "react-router-dom";
+import { ListaProdutos } from "../components/ListaProdutos"
 import React, { useState } from "react";
 
 export default function InserirProdutos() {
-    const [produto, setProduto] = useState({
+
+    const navigate = useNavigate();
+
+    const [produto, setProdutos] = useState({
         id: "",
         nome: "",
         desc: "",
         preco: "",
     });
 
-    const [produtos, setProdutos] = useState([]); 
+    const [produtos, setProduto] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setProduto({ ...produto, [name]: value });
+        setProdutos({ ...produto, [name]: value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (produto.nome && produto.desc && produto.preco) {
-            
-            setProdutos([...produtos, produto]);
+    const handleInserir = (event) => {
+        event.preventDefault();
 
-           
-            setProduto({ id: "", nome: "", desc: "", preco: "" });
+        if (produto.nome && produto.desc && produto.preco) {
+            event.preventDefault();
+            
+            ListaProdutos.push(produto)
+
+            navigate("/produtos")
         }
     };
 
     return (
         <div>
-           <h2> Inserindo Produtos </h2>
-                <h4> Exercício - Checkpoint 2</h4>
-            <form onSubmit={handleSubmit}>
+            <h2>Inserindo Produtos</h2>
+            <h4>Exercício - Checkpoint 2</h4>
+            <form onSubmit={handleInserir}>
                 <fieldset>
                     <legend>Produto a ser Inserido</legend>
                     <div>
@@ -49,7 +55,7 @@ export default function InserirProdutos() {
                         <input
                             type="text"
                             name="desc"
-                            id="idDesc" 
+                            id="idDesc"
                             value={produto.desc}
                             onChange={handleChange}
                         />
@@ -67,7 +73,7 @@ export default function InserirProdutos() {
                     </div>
 
                     <div>
-                        <button>Adicionar</button>
+                        <button type="submit">Adicionar</button>
                     </div>
                 </fieldset>
             </form>

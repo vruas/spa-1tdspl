@@ -3,7 +3,7 @@ import { ListaProdutos } from "../components/ListaProdutos";
 import classes from "./Produtos.module.css";
 import {AiOutlineEdit as Editar} from "react-icons/ai";
 import {BsTrash as Excluir} from "react-icons/bs"
-import {AiOutlineFileAdd as InserirProdutos} from 'react-icons/ai'
+import {MdOutlineAddBox as InserirProdutos} from 'react-icons/md'
 
 export default function Produtos() {
   return (

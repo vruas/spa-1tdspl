@@ -25,8 +25,7 @@ const router = createBrowserRouter([
   }
 ]);
 
-// Adicionando InserindoProdutos
-// { path: '/inserir/produtos/:id', element: <InserirProdutos />}, + import InserirProdutos from './routes/InserirProdutos.jsx';
+
 
 //BLOCO DE ROTAS
 
