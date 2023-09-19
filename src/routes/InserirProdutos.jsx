@@ -73,9 +73,30 @@ export default function InserirProdutos() {
                     </div>
                 </fieldset>
             </form>
+            
+            <table id="taskTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {produtos.map((produto, index) => (
+                        <tr key={index}>
+                            <td>{produto.nome}</td>
+                            <td>{produto.desc}</td>
+                            <td>{produto.preco}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
         </div>
     );
 }
+
 
 
 
