@@ -1,4 +1,5 @@
 import { useNavigate} from "react-router-dom";
+import { ListaProdutos } from "../components/ListaProdutos"
 import React, { useState } from "react";
 
 export default function InserirProdutos() {

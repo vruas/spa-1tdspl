@@ -9,7 +9,7 @@ export default function Produtos() {
   return (
     <div>
       <h1>Produtos de INFORMÁTICA</h1>
-      <h3>Os Melhores Produtos do Mercado</h3>
+      <h3>Confira nossos produtos!</h3>
 
       <table className={classes.estilo}>
         <thead className={classes.tableHeaders}>

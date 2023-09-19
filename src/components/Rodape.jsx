@@ -4,7 +4,7 @@ export default function Rodape() {
         <footer> 
             <div>
                 <ul>
-                    <li><a href="#">Github</a></li>
+                    <li><a href="https://github.com/vruas">Github</a></li>
                     <li><a href="#">X</a></li>
                     <li><a href="#">Linkedin</a></li>
                 </ul>
@@ -13,10 +13,10 @@ export default function Rodape() {
 
             <div> 
             <h3> Integrantes:
-                <p>Vitor Ruas - 550871</p>
-                <p>Lucas Mendonça - 99528 </p>
-                <p>Gabriel Previ - 98774</p>
-                <p>Otávio Porto - 550715</p>
+                <p>Vitor Ruas - RM550871</p>
+                <p>Lucas Mendonça - RM99528 </p>
+                <p>Gabriel Previ - RM98774</p>
+                <p>Otávio Porto - RM550715</p>
             </h3>
                 
             </div>
