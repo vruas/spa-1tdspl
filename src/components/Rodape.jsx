@@ -16,7 +16,7 @@ export default function Rodape() {
                 <p>Vitor Ruas - 550871</p>
                 <p>Lucas Mendonça - 99528 </p>
                 <p>Gabriel Previ - 98774</p>
-                <p>Otávio Porto</p>
+                <p>Otávio Porto - 550715</p>
             </h3>
                 
             </div>
