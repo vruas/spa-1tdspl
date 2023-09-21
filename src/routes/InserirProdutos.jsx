@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ListaProdutos } from "../components/ListaProdutos";
+import { useNavigate } from "react-router-dom";
 
 export default function InserirProdutos() {
     document.title = 'Inserir Produto';
+    const navigate = useNavigate();
 
     const [produtoId, setProdutoId] = useState(second)
     useState [produto, setProduto] = useState({
@@ -14,6 +16,21 @@ export default function InserirProdutos() {
 
     });
 
+    const handleChange = (e)=>{
+        e.preventDefault();
+        const {name, value} = e.target;
+        setProduto({...produto, [name]: value});
+    }
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        setProdutoId(ListaProdutos[ListaProdutos.length-1].id + 1);
+        setProduto({...produto, [id]:produtoId})
+
+        alert("Produto cadastrado com sucesso...");
+        navigate("/produtos")
+    };
+
 
 
 
@@ -22,7 +39,7 @@ export default function InserirProdutos() {
     <div>
         <h1>InserirProdutos</h1>
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>Cadastrar Produto</legend>
                     <div>
