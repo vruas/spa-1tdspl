@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import classes from "./Produtos.module.css";
-import {AiOutlineEdit as Editar} from "react-icons/ai";
-import {BsTrash as Excluir} from "react-icons/bs"
-import {MdOutlineAddBox as InserirProdutos} from 'react-icons/md'
+import {AiFillEdit as Editar} from "react-icons/ai";
+import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
+import { useEffect, useState } from "react";
 
 export default function Produtos() {
+
+  const [counter, setCounter] = useState(0);
+  document.title = "Lista de Produtos: " + counter;
+
+  
   return (
     <div>
-      <h1>Produtos de INFORMÁTICA</h1>
-      <h3>Confira nossos produtos!</h3>
+      <h1>Produtos de INFORMÁTICA - FIPAPI</h1>
+      <p>Os Melhores Produtos do Mercado</p>
+
 
       <table className={classes.estilo}>
         <thead className={classes.tableHeaders}>
@@ -32,9 +38,7 @@ export default function Produtos() {
               <td>{produto.preco}</td>
               <td><img src={produto.img} alt={produto.desc} /></td>
               <td>
-                <Link to={`/editar/produtos/${produto.id}`}> <Editar/> </Link>  
-                  | <Link to={`/excluir/produtos/${produto.id}`}> <Excluir/> </Link>
-                    | <Link to={`/inserir/produtos/${produto.id}`}> <InserirProdutos/> </Link> 
+                <Link to={`/editar/produtos/${produto.id}`}> <Editar/></Link> | <Link to={`/excluir/produtos/${produto.id}`}> <Excluir/> </Link>
               </td>
             </tr>
           ))}
@@ -48,8 +52,25 @@ export default function Produtos() {
       </table>
     </div>
   );
+  // useEffect(()=>{
+      //   console.log("Este useEffect renderiza sempre que ocorre alguma atualização no componente!");
+      // });
+    
+      // const [listaProdutosLocal, setListaProdutosLocal] = useState([{}]);
+    
+      // useEffect(()=>{
+      //   console.log("Este useEffect renderiza apenas uma vez no carregamento do componente!");
+      // },[]);
+      
+      // const [counter2, setCounter2] = useState(0);
+    
+      // useEffect(()=>{
+      //   console.log("Este useEffect renderiza apenas se o objeto/elemento/componente e ou variável sofrer uma atualização. Devemos colocar o item a ser monitorado no array de dependências: [ ]");
+      // },[counter2]);
 }
-
-
-
- 
+        {/* <div>
+          <button onClick={()=> setCounter(counter + 1)}>COUNTER - {counter}</button>
+        </div>
+        <div>
+          <button onClick={()=> setCounter2(counter2 + 1)}>COUNTER2 - {counter2}</button>
+        </div> */}
