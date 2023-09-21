@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Produtos() {
 
-  const [counter, setCounter] = useState(0);
+  
   document.title = "Lista de Produtos: " + counter;
 
   
