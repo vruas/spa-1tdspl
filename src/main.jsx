@@ -19,18 +19,16 @@ const router = createBrowserRouter([
       { path: '/', element: <Home />},
       { path: '/produtos', element: <Produtos />},
       { path: '/editar/produtos/:id', element: <EditarProdutos />},
-      { path: '/excluir/produtos/:id', element: <ExcluirProdutos />},
-      { path: '/inserir/produtos/:id', element: <InserirProdutos />},
-    ] 
+      { path: '/excluir/produtos/:id', element: <ExcluirProdutos/>},
+      { path: '/cadastrar', element: <InserirProdutos/>},
+    ]
   }
 ]);
-
-
 
 //BLOCO DE ROTAS
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+  // <React.StrictMode>
+   <RouterProvider router={router}/>
+  // {/* </React.StrictMode>, */}
 )
