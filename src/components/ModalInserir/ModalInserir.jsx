@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import styles from "./ModalInserir.module.css";
 import "./ModalInserir.scss";
@@ -79,3 +80,19 @@ export default function ModalInserir(props) {
     );
   }
 }
+=======
+import styles from "./ModalInserir.module.css"
+
+export default function ModalInserir(props) {
+    if(props.open){
+
+        return (
+          <div className={styles.container}>
+              <h1>ModalInserir</h1>
+              <button onClick={()=> props.setOpen(false)}>CLOSE-MODAL</button>
+          </div>
+        );
+      }
+      
+    }
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21

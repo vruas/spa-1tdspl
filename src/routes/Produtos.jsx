@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./Produtos.module.css";
+<<<<<<< HEAD
 import { AiFillEdit as Editar } from "react-icons/ai";
 import { RiDeleteBin2Fill as Excluir } from "react-icons/ri";
 import { useEffect, useState } from "react";
@@ -34,6 +35,23 @@ export default function Produtos() {
       {open ? <ModalInserir open={open} setOpen={setOpen}/> : ""}
 
       <Link onClick={()=> setOpen(true)}>Cadastro de Produtos</Link>
+=======
+import {AiFillEdit as Editar} from "react-icons/ai";
+import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
+import { useEffect, useState } from "react";
+
+export default function Produtos() {
+
+  
+  document.title = "Lista de Produtos: " + counter;
+
+  
+  return (
+    <div>
+      <h1>Produtos de INFORMÁTICA - FIPAPI</h1>
+      <p>Os Melhores Produtos do Mercado</p>
+
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
 
       <table className={classes.estilo}>
         <thead className={classes.tableHeaders}>
@@ -55,6 +73,7 @@ export default function Produtos() {
               <td>{produto.desc}</td>
               <td>{produto.preco}</td>
               <td>
+<<<<<<< HEAD
                 <img src={produto.img} alt={produto.desc} />
               </td>
               <td>
@@ -67,6 +86,9 @@ export default function Produtos() {
                   {" "}
                   <Excluir />{" "}
                 </Link>
+=======
+                <Link to={`/editar/produtos/${produto.id}`}> <Editar/></Link> | <Link to={`/excluir/produtos/${produto.id}`}> <Excluir/> </Link>
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
               </td>
             </tr>
           ))}
@@ -80,7 +102,23 @@ export default function Produtos() {
       </table>
     </div>
   );
+  // useEffect(()=>{
+      //   console.log("Este useEffect renderiza sempre que ocorre alguma atualização no componente!");
+      // });
+    
+      // const [listaProdutosLocal, setListaProdutosLocal] = useState([{}]);
+    
+      // useEffect(()=>{
+      //   console.log("Este useEffect renderiza apenas uma vez no carregamento do componente!");
+      // },[]);
+      
+      // const [counter2, setCounter2] = useState(0);
+    
+      // useEffect(()=>{
+      //   console.log("Este useEffect renderiza apenas se o objeto/elemento/componente e ou variável sofrer uma atualização. Devemos colocar o item a ser monitorado no array de dependências: [ ]");
+      // },[counter2]);
 }
+<<<<<<< HEAD
 
 //Exemplo de useEffect 3x.
 // useEffect(()=>{
@@ -110,3 +148,11 @@ export default function Produtos() {
 //     <div>
 //       <button onClick={()=> setCounter2(counter2 + 1)}>COUNTER2 - {counter2}</button>
 //     </div>
+=======
+        {/* <div>
+          <button onClick={()=> setCounter(counter + 1)}>COUNTER - {counter}</button>
+        </div>
+        <div>
+          <button onClick={()=> setCounter2(counter2 + 1)}>COUNTER2 - {counter2}</button>
+        </div> */}
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
