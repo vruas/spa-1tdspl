@@ -1,103 +1,69 @@
-import { useNavigate} from "react-router-dom";
-import { ListaProdutos } from "../components/ListaProdutos"
-import React, { useState } from "react";
+import { useState } from "react";
+import {ListaProdutos} from "../components/ListaProdutos";
+import { useNavigate } from "react-router-dom";
 
-export default function InserirProdutos() {
+export default function InserirProduto() {
+    document.title = 'Inserir Produto';
     const navigate = useNavigate();
 
-    const [produto, setProdutos] = useState({
-        id: "",
-        nome: "",
-        desc: "",
-        preco: "",
+    // const [produtoId, setProdutoId] = useState(0);
+    let idProd = parseInt(ListaProdutos[ListaProdutos.length-1].id) + 1;
+    const [produto, setProduto] = useState({
+        id:idProd,
+        nome:"",
+        desc:"",
+        preco:0.0,
+        img:"" 
     });
+    
+    const handleChange = (e)=>{
+        e.preventDefault();
+        const {name,value} = e.target;
+        setProduto({...produto,[name]:value});
+    }
 
-    const [produtos, setProduto] = useState([]);
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        
+        // setProdutoId(idProd);
+        // const{id} = produto;
+        // setProduto({...produto,id:produtoId})
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setProdutos({ ...produto, [name]: value });
+        ListaProdutos.push(produto);
+
+        alert("Produto cadastrado com sucesso...");
+        navigate("/produtos")
     };
-    const handleInserir = (event) => {
-        event.preventDefault();
 
-        if (produto.nome && produto.desc && produto.preco) {
-            event.preventDefault();
-            
-            ListaProdutos.push(produto)
-
-            navigate("/produtos")
-        }
-    };
-    return (
+  return (
+    <div>
+        <h1>Inserir Produto</h1>
         <div>
-            <h2>Inserindo Produtos</h2>
-            <h4>Exercício - Checkpoint 2</h4>
-            <form onSubmit={handleInserir}>
+            <form onSubmit={handleSubmit}>
                 <fieldset>
-                    <legend>Produto a ser Inserido</legend>
+                    <legend>Cadastrar Produto</legend>
                     <div>
                         <label htmlFor="idNome">Nome:</label>
-                        <input
-                            type="text"
-                            name="nome"
-                            id="idNome"
-                            value={produto.nome}
-                            onChange={handleChange}
-                        />
+                        <input type="text" name="nome" id="idNome" value={produto.nome} onChange={handleChange}/>
                     </div>
-
                     <div>
                         <label htmlFor="idDesc">Descrição:</label>
-                        <input
-                            type="text"
-                            name="desc"
-                            id="idDesc"
-                            value={produto.desc}
-                            onChange={handleChange}
-                        />
+                        <input type="text" name="desc" id="idDesc" value={produto.desc} onChange={handleChange}/>
                     </div>
-
                     <div>
                         <label htmlFor="idPreco">Preço:</label>
-                        <input
-                            type="text"
-                            name="preco"
-                            id="idPreco"
-                            value={produto.preco}
-                            onChange={handleChange}
-                        />
+                        <input type="number" name="preco" id="idPreco" value={produto.preco} onChange={handleChange}/>
                     </div>
-
                     <div>
-                        <button type="submit">Adicionar</button>
+                        <label htmlFor="idImg">Imagem:</label>
+                        <input type="url" name="img" id="idImg" value={produto.img} onChange={handleChange}/>
+                    </div>
+                    <div>
+                        <button>Cadastrar</button>
                     </div>
                 </fieldset>
             </form>
-            
-            <table id="taskTable">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {produtos.map((produto, index) => (
-                        <tr key={index}>
-                            <td>{produto.nome}</td>
-                            <td>{produto.desc}</td>
-                            <td>{produto.preco}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-
         </div>
-    );
+    </div>
+  )
 }
-
-
-
-
