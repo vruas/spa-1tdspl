@@ -24,11 +24,19 @@ export default function InserirProduto() {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
+<<<<<<< HEAD
+        
+        // setProdutoId(idProd);
+        // const{id} = produto;
+        // setProduto({...produto,id:produtoId})
+
+=======
         // setProdutoId(idProd)
 
         // const{id} = produto;
         // setProduto({...produto,[id]:idProd})
 
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
         ListaProdutos.push(produto);
 
         alert("Produto cadastrado com sucesso...");

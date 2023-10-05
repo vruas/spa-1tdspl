@@ -25,7 +25,12 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+<<<<<<< HEAD
+    "saas": "^1.0.0",
+    "sass": "^1.68.0",
+=======
     "json-server": "^0.17.3",
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
     "vite": "^4.4.5"
   }
 }

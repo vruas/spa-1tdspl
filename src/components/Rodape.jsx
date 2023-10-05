@@ -4,9 +4,15 @@ export default function Rodape() {
         <footer> 
             <div>
                 <ul>
-                    <li><a href="https://github.com/vruas">Github</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">Linkedin</a></li>
+                    <li>
+                        <a href="https://github.com/vruas">Github</a>
+                    </li>
+                    <li>
+                        <a href="#">X</a>
+                    </li>
+                    <li>
+                        <a href="#">Linkedin</a>
+                    </li>
                 </ul>
                 <p>&copy; Todos os meus direitos reservados 2021</p>
             </div>

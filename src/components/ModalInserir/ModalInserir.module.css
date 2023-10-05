@@ -1,14 +1,27 @@
+<<<<<<< HEAD
+.container{
+=======
 .container {
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
 
     background-color: rgba(0,0,0,0.8);
     position: fixed;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
+    top:0%;
+=======
     top: 0%;
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
     z-index: 1000;
     color: #fff;
 
     & h1{
         text-align: center;
     }
+<<<<<<< HEAD
+
+    
+=======
+>>>>>>> d8b82a8b983d264030993013d75670da3a5aff21
 }
